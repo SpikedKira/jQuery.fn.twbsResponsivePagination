@@ -22,9 +22,21 @@
       settings.$overflowBefore = $("<li><span></span></li>").insertAfter( $lis.filter(':nth-child('+settings.endcapCount+')') );
       settings.$overflowAfter = $("<li><span></span></li>").insertBefore( $lis.filter(':nth-last-child('+settings.endcapCount+')') );
 
-      settings.$overflowBefore.add( settings.$overflowAfter ).addClass( "disabled removable" ).addClass( settings.overflowClass ).attr( 'aria-hidden', true );
+      settings.$overflowBefore.add( settings.$overflowAfter ).addClass(
+        "disabled removable"
+      ).addClass(
+        settings.overflowClass
+      ).attr( 'aria-hidden', true ).css('display', 'inline-block');
 
       $(this).data('twbsResponsivePagination', settings);
+
+      // remove whitespace text nodes from the LIs //
+      $(this).contents().filter( function() {
+        return (this.nodeType == 3 && !/\S/.test(this.nodeValue));
+      }).remove();
+
+      $(this).css('white-space', 'nowrap');
+      $lis.css('display', 'inline-block');
 
       var context = this;
 
@@ -38,10 +50,6 @@
     update: function() {
       var cls = settings.overflowClass;
       var $lis = $(this).find(' > li');
-
-      $(this).css('white-space', 'nowrap');
-      $lis.css('display', 'inline-block');
-
       $lis.filter('.' + cls + ' ~ li').hide().filter('.' + cls + ' ~ .' + cls + ' ~ li').show();
       $lis.filter('.' + cls).show();
       $lis.filter('.active').show();
