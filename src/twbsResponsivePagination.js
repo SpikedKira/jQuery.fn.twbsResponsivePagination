@@ -10,6 +10,7 @@
   }
 
   var methods = {
+
     init: function( options ) {
       // If options exist, lets merge them
       var opts = {};
@@ -37,6 +38,10 @@
     update: function() {
       var cls = settings.overflowClass;
       var $lis = $(this).find(' > li');
+
+      $(this).css('white-space', 'nowrap');
+      $lis.css('display', 'inline-block');
+
       $lis.filter('.' + cls + ' ~ li').hide().filter('.' + cls + ' ~ .' + cls + ' ~ li').show();
       $lis.filter('.' + cls).show();
       $lis.filter('.active').show();
@@ -77,6 +82,7 @@
 
       }
     }
+
   };
 
   // define the plugin //
