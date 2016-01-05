@@ -1,0 +1,25 @@
+{
+  "name": "jquery.fn.twbs-responsive-pagination",
+  "version": "0.1.1",
+  "homepage": "https://github.com/SpikedKira/jQuery.fn.twbsResponsivePagination",
+  "authors": [
+    "J Corley <spikedkira@gmail.com>"
+  ],
+  "description": "jQuery plugin to make Twitter Bootstrap pagination responsive",
+  "main": "dist/twbsResponsivePagination.min.js",
+  "moduleType": [],
+  "keywords": [
+    "bootstrap",
+    "pagination",
+    "paging",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "jquery.fn.twbs-responsive-pagination",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "jQuery plugin to make Twitter Bootstrap pagination responsive",
   "main": "dist/twbsResponsivePagination.min.js",
   "scripts": {
@@ -20,9 +20,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SpikedKira/jQuery.fn.twbsResponsivePagination/issues"
-  },
-  "peerDependencies": {
-    "jquery": "*"
   },
   "homepage": "https://github.com/SpikedKira/jQuery.fn.twbsResponsivePagination#readme"
 }
