@@ -3,7 +3,7 @@
     var settings = {};
 
     function checkWidth( el ) {
-        if( $(el).width() > $(el).parent().width() ) {
+        if( $(el).width() >= $(el).parent().width() ) {
             return false;
         }
         return true;
@@ -26,17 +26,9 @@
                 "disabled removable"
             ).addClass(
                 settings.overflowClass
-            ).attr( 'aria-hidden', true ).css('display', 'inline-block');
+            ).attr( 'aria-hidden', true );
 
             $(this).data('twbsResponsivePagination', settings);
-
-            // remove whitespace text nodes from the LIs //
-            $(this).contents().filter( function() {
-                return (this.nodeType == 3 && !/\S/.test(this.nodeValue));
-            }).remove();
-
-            $(this).css('white-space', 'nowrap');
-            $lis.css('display', 'inline-block');
 
             var context = this;
 
